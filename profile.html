@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" 
+data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <script src="themes.js" ></script>
+     <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>LearnVerse — Profile</title>
+ 
+  <style>
+    [data-theme="dark"] {
+      --bg:      #191932;
+      --surface: rgba(10,10,26,.80);
+      --card:    #1e1e3a;
+      --border:  #1e2d45;
+      --gold:    #f5c842;
+      --gold2:   #e8a500;
+      --text:    #e8eaf0;
+      --muted:   rgba(255,255,255,.55);
+      --r:       16px;
+    }
+    [data-theme="light"] {
+      --bg:      #f0f2fb;
+      --surface: rgba(255,255,255,.85);
+      --card:    #ffffff;
+      --border:  #dde3f0;
+      --gold:    #c99000;
+      --gold2:   #a87600;
+      --text:    #1a1a2e;
+      --muted:   rgba(0,0,0,.50);
+      --r:       16px;
+    }
+
+  
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: background .3s, color .3s;
+    }
+
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      flex: 1;
+    }
+
+  
+    .avatar-section {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 2rem 2.5rem;
+      transition: background .3s, border-color .3s;
+    }
+    .avatar {
+      width: 96px; height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--gold);
+      flex-shrink: 0;
+    }
+    .avatar-info h1 { font-size: 1.7rem; font-weight: 800; }
+    .avatar-info p  { color: var(--muted); font-size: .9rem; margin-top: 4px; }
+
+    
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 2rem 2.5rem;
+      transition: background .3s, border-color .3s;
+    }
+    .card-title { font-size: 1.05rem; font-weight: 700; color: var(--gold); margin-bottom: 1.5rem; }
+
+    
+    .stats-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
+    .stat-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1rem;
+      text-align: center;
+      transition: background .3s;
+    }
+    .stat-box .num { font-size: 2rem; font-weight: 800; color: var(--gold); line-height: 1; }
+    .stat-box .lbl { font-size: .78rem; color: var(--muted); margin-top: 6px; }
+
+
+    .field-group { display: flex; flex-direction: column; gap: 1.1rem; }
+    .field-row   { display: flex; flex-direction: column; gap: 5px; }
+    .field-lbl   { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .6px; }
+    .field-val {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: .95rem;
+      color: var(--text);
+      opacity: .85;
+      transition: background .3s;
+    }
+    .field-pass { letter-spacing: 4px; color: var(--muted); font-size: 1.1rem; }
+
+   
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 1.4rem;
+      color: var(--muted);
+      font-size: .85rem;
+      transition: background .3s;
+    }
+
+    @media (max-width: 600px) {
+      .avatar-section { flex-direction: column; text-align: center; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .card { padding: 1.5rem; }
+      .nav-links, .btn-login { display: none; }
+    }
+
+  </style>
+</head>
+<body>
+
+<input type="checkbox" id="themeSwitch"/>
+
+<nav id="navbar">
+  <div class="nav-left">
+    <div class="logo"> <i class="fas fa-graduation-cap"></i> LearnVerse</div>
+  </div>
+<ul class="nav-links" id="navLinks">
+     <li><a href="index.html" >Home</a></li>
+    <li><a href="courses.html">Courses</a></li>
+    <li><a href="artificial_intelligence.html">Course-details</a></li>
+    <li><a href="about.html" >About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="search.html">Search</a></li>
+    <li><a href="profile.html"  class="active">Profile</a></li>
+  </ul>
+  <div class="nav-right">
+
+    <a href="Log-in.html" class="btn-nav-login"><i class="fas fa-sign-in-alt"></i> Login</a>
+    <a href="register.html" class="btn-nav-register"><i class="fas fa-user-plus"></i> Register</a>
+    <button class="hamburger" id="hamburger"></button>
+  </div>
+</nav>
+
+<div class="page">
+  <div class="avatar-section">
+    <img class="avatar"
+      src="32 (1).jfif"
+      alt="Profile photo"/>
+    <div class="avatar-info">
+      <h1>David Albert</h1>
+      <p>David@email.com</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title"> My Courses</div>
+    <div class="stats-grid">
+      <div class="stat-box"><div class="num">12</div><div class="lbl">Completed</div></div>
+      <div class="stat-box"><div class="num">3</div><div class="lbl">In Progress</div></div>
+      <div class="stat-box"><div class="num">48</div><div class="lbl">Hours Learned</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title"> My Information</div>
+    <div class="field-group">
+      <div class="field-row">
+        <span class="field-lbl">Full Name</span>
+        <div class="field-val">David Albert</div>
+      </div>
+      <div class="field-row">
+        <span class="field-lbl">Phone Number</span>
+        <div class="field-val">+20 100 000 0000</div>
+      </div>
+      <div class="field-row">
+        <span class="field-lbl">Email Address</span>
+        <div class="field-val">David@email.com</div>
+      </div>
+      <div class="field-row">
+        <span class="field-lbl">Password</span>
+        <div class="field-val field-pass">••••••••</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>&copy; 2026 LearnVerse. All rights reserved.</footer>
+
+</body>
+</html>
